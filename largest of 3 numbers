@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int num1, num2, num3, ans;
+	
+	cin>>num1>>num2>>num3;
+	
+	if(num1>num2 && num1>num3)
+	{
+		ans = num1;
+	}
+	else if(num2>num1 && num2>num3)
+	{
+		ans = num2;
+	}
+	else
+	{
+		ans = num3;
+	}
+	
+	cout<<"The largest of 3 nos. is "<<ans;
+	return 0;
+}
