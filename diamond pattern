@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int i, j, k, n, sp, st;
+	j=2;
+	k=1;
+	cout<<"Enter no. of rows\n";
+	cin>>n;
+	
+	for(i=0; i<2*n-1; i++)
+	{
+		if(i<=n-1)
+		{
+			for(sp=0; sp< n-i-1; sp++)
+			{
+				cout<<" ";
+			}
+			
+			for(st=0; st<2*i+1; st++)
+			{
+				cout<<"*";
+			}
+			cout<<"\n";
+		}
+		
+		else
+		{
+			for(sp=0; sp< k; sp++)
+			{
+				cout<<" ";
+			}
+			k++;
+		
+			for(st=0; st<(2*n-1)-j; st++)
+			{
+				cout<<"*";
+			}
+			cout<<"\n";
+			j+=2;
+		}
+	}
+}
