@@ -1,0 +1,83 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int i, j, rows, cols, k, m, n, l, p, ele, count=0;
+
+	cout<<"Enter the no. of rows: ";
+	cin>>rows;
+	cout<<"Enter the no. of columns: ";
+	cin>>cols;
+	int arr[rows][cols];
+	
+	ele = rows*cols;
+	
+	cout<<"Enter the elements:\n";
+	
+	for(i=0; i<rows; i++)
+	{
+		for(j=0; j<cols; j++)
+		{
+			cin>>arr[i][j];
+		}
+	}
+	
+	cout<<"---The original matrix---\n";
+	
+	for(i=0; i<rows; i++)
+	{
+		for(j=0; j<cols; j++)
+		{
+			cout<<arr[i][j]<<"      ";
+		}
+		cout<<"\n";
+	}
+	
+	cout<<"-----The Spiral Matrix-----\n";
+	
+	k=1;
+	p=cols;
+	
+	for(i=0; i<rows; i++)
+	{
+		//cout<<"k= "<<k<<"  p= "<<p<<"$ ";
+		for(j=i; j<cols; j++)
+		{	
+			cout<<arr[i][j]<<" ";
+			count++;
+            if(count==ele)   return 0;
+			if(j==cols-k)
+			{
+				break;
+			}
+		}
+		
+		for(m=i+1; m<rows; m++)
+		{	
+			cout<<arr[m][j]<<" ";
+			count++;
+            if(count==ele)   return 0;
+			if(m==rows-k)
+			{
+				break;
+			}
+		}
+		
+		for(n=cols-1-k; n>cols-p; n--)
+		{
+			cout<<arr[m][n]<<" ";
+			count++;
+            if(count==ele)   return 0;
+		}
+		
+		for(l=m; l>i; l--)
+		{
+			cout<<arr[l][n]<<" ";
+			count++;
+            if(count==ele)   return 0;
+		}
+		k++;
+		p--;
+	}
+}
